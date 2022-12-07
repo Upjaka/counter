@@ -36,7 +36,7 @@ resetButton.addEventListener('click', () => {
   submitButton.disabled = true;
 });
 
-// Расчет числовых значений
+// Расчет числовых значений по нажатию на кнопку
 form.addEventListener('submit', (evt) => {
   evt.preventDefault();
 
@@ -61,8 +61,8 @@ form.addEventListener('submit', (evt) => {
       break;
   }
   const N = (form.querySelector(':checked').value === 'male') ?
-    (10 * weight.value) + (6,25 * height.value) - (5 * age.value) + 5 :
-    (10 * weight.value) + (6,25 * height.value) - (5 * age.value) - 161;
+    (10 * weight.value) + (6.25 * height.value) - (5 * age.value) + 5 :
+    (10 * weight.value) + (6.25 * height.value) - (5 * age.value) - 161;
   counterResult.querySelector('#calories-norm').textContent = (N * activityCoef).toFixed(0);
   counterResult.querySelector('#calories-minimal').textContent = (0.85 * N * activityCoef).toFixed(0);
   counterResult.querySelector('#calories-maximal').textContent = (1.15 * N * activityCoef).toFixed(0);
